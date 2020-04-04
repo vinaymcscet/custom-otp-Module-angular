@@ -1,0 +1,31 @@
+
+$primary : #4185f4;
+
+$primary-light : lighten($primary, 43%);
+$primary-dark : darken($primary, 40%);
+
+$secondary: #6d6e70;
+$secondary-light : lighten($secondary, 50%);
+$secondary-dark : darken($secondary, 40%);
+    
+/* default colors */
+
+$white : #ffffff;
+$black : #000000;
+$yellow: #e8e759;
+$blue: #4444e4;
+$grey: gray;
+$link: #e17582;
+$red: #c40000;
+$green: #007600;
+$info:#25a9e0;
+$lightgray : #bcbcbc;
+$warning:#ffc107;
+$status_green: #007600;
+$status_red: #c40000;
+$otp_border:#c5c5c5;
+
+
+/* Fonts */
+
+$font :'Open Sans', sans-serif;

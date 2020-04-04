@@ -1,0 +1,377 @@
+/* 
+  APPINVENTIV TECHNOLOGIES
+  Written By: FAISAL KHAN
+*/
+@import 'var';
+
+/* 
+    DISPLAY FLEX PROPERTY 
+*/
+
+@mixin flex($a-item, $j-align) { 
+  display: flex;
+  align-items: $a-item ;
+  justify-content: $j-align ;
+}
+
+
+/*
+    FOR ANY DEFAULT IMAGE
+*/
+
+@mixin img($width, $height, $type, $radius) {
+  .img {
+      width: $width;
+      height: $height;
+      overflow: hidden;
+      background-color: #f9f9f9;
+      border: 1px solid #f2f2f2;
+      border-radius: $radius;
+      position: relative;
+      img {
+          width: 100%;
+          height: 100%;
+          object-fit: $type;
+      }
+  }
+}
+
+/*
+  PANEL CARD FOR CARD LAYOUT
+*/
+
+@mixin panel {
+  .panel {
+      padding: 0;
+      background-color: #ffffff;
+      border-radius: 5px;
+      overflow: hidden;
+
+      &-header {
+          padding: 15px;
+          font-weight: 600;
+      }
+
+      &-body {
+          padding: 15px;
+          border-top: 1px solid rgba(0, 0, 0, 0.05);
+          border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+
+      }
+
+      &-footer {
+          padding: 15px;
+          font-weight: 600;
+
+      }
+  }
+}
+
+/*
+  DETAIL PAGE CSS FOR SHOWING INFO DETAILS
+*/
+
+@mixin info_data {
+  .info_data {
+      font-size: 1rem;
+      .info_single {
+          position: relative;
+          margin: 5px 0 10px;
+          .label {
+              font-size: 0.9rem;
+              color: rgba(0, 0, 0, 0.6);
+              word-break: break-all;
+          }
+          .value {
+              font-size: 1rem;
+              word-break: break-all;
+          }
+      }
+
+      @media (max-width:576px) {
+        font-size: 0.8rem;
+      }
+
+  }
+}
+
+/* 
+    BUBBLE UI CSS
+*/
+ 
+%bubble {
+  .bubble {
+    display: inline-block;
+    padding: 5px 10px;
+    background: #f1f1f1;
+    border-radius: 30px;
+    font-size: 16px;
+    border: 1px solid #cccccc;
+    margin-bottom: 5px;
+    &~.bubble{
+      margin-left: 5px;
+    }
+    &.active {
+      background-color: $primary-light;
+      border-color: $primary;
+    }
+  }
+}
+
+/* 
+  MAT DIALOG POPUP CLOSE BUTTON 
+*/
+@mixin mat-close {
+ 
+  .mat_close {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 0;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    opacity: 0.8;
+    outline: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: .3s ease all;
+    &::after {
+        content: 'close';
+        font-family: 'Material Icons';
+        font-size: 22px;
+    }
+    &:hover {
+        opacity: 1;
+    }
+  }
+ 
+}
+
+/* 
+  FORM BUTTON CSS 
+*/
+
+@mixin  form-btn($type) {
+  .form-btn {
+    margin-top: 1.2rem;
+    padding: 1.5rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: $type;
+    border-top: 2px solid rgba($primary, 0.2);
+    button {
+        min-width: 100px;
+        &~button {margin-left: 15px;}
+    }
+  }
+}
+
+/* 
+  PAGE HEADING
+*/
+@mixin  page-heading {
+  .page-heading {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    box-shadow: none !important;
+    padding:10px 16px;
+    .mat-title{
+      margin: 0;
+      font-size: 17px;
+    }
+    @include btn_groups;
+    @media (max-width:767px) {
+      .mat-title + * { width: 100%; margin-bottom: 10px;}
+      .btn_groups { width: 100%; }
+    }
+  }
+
+}
+
+
+@mixin  btn_groups {
+  .btn_groups {
+    button + button {margin-left: 10px;}
+  }
+}
+
+
+/*
+  SIMPLE TABLE 
+*/
+
+@mixin table {
+  .table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+    tr{
+        td, th{
+            padding: 8px;
+            line-height: 1.42857143;
+            vertical-align: top;
+            border-bottom: 1px solid #ddd;
+            // font-weight: 400;
+        }
+        th{
+            font-weight: 500;
+        }
+    }
+  }
+}
+
+/*
+  FULL WIDTH POPUP
+*/
+
+@mixin fullPopup {
+  
+  ::ng-deep {
+      .fullPopup.cdk-overlay-pane {
+        max-width: 100% !important;
+        width: 100% !important;
+        height: 100%;
+        .mat-dialog-container {
+            border-radius: 0;
+            max-height: 100vh;
+            // padding: 10px;
+        }
+        .mat-dialog-content {
+            max-height: calc(100% - 92px);
+        }
+        
+      }
+  }
+  
+}
+
+
+/* MAT DIALOG CSS */
+%mat-dialog-css{
+
+.mat-dialog-content{
+    text-align: center;
+   .modal_message{
+        margin: 0 auto;
+        padding: 20px 0;
+        text-align: center;
+        font-weight: 500;
+        margin-bottom: 20px;
+        font-size: 18px;
+    }
+    .form-btn{
+        text-align: center;
+        padding-bottom: 8px;
+        button{
+          min-width: 120px;
+          @media (max-width:380px) {
+            min-width: 100px;
+          }
+        }
+      
+    }
+
+  }
+}
+
+
+
+/* ADD DYNAMIC FIELDS  */
+
+%add_dynamic{
+
+  .add_dynamic {
+    .btn-circle{
+        padding: 0;
+        min-width: 37px;
+        border-radius: 50%;
+      }
+    .panel {
+        border: 2px solid #cccccc;
+        padding: 20px;
+        padding-bottom: 0;
+        margin-bottom: 20px;
+      }
+
+    .c_title {
+      font-size: 18px;
+      margin-bottom: 10px;
+      font-weight: 400;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .mat-button {
+        margin-left: 50px;
+      }
+    }
+
+    .panel {
+      border-color: #dddddd;
+      position: relative;    
+      &~.panel{
+        margin-top: 30px;
+      }  
+    }
+    .dymanic_row {
+        width: calc(100% - 50px);
+        position: relative;
+
+        .catRem {
+          position: absolute;
+          right: -50px;
+          top: 10px;
+        }
+      }
+      .dynamic_item_group{
+        position: relative;
+        .menuAdd {
+          position: absolute;
+          right: 30px;
+          bottom: 30px;
+        }
+      }
+
+      .mat-button {
+        &.remove {
+          background: rgba(255, 0, 0, 0.2);top: 12px;
+          background: rgb(255, 204, 204);
+          position: absolute;
+          top: -20px;
+          right: -20px;
+          min-width: 41px;
+          @media (max-width:576px) {
+          }
+        }
+        &.add{
+          background:#ceefd8
+        }
+      }
+
+      .form-btn{
+        margin-top: 20px;
+      }
+
+  }
+
+  @media (max-width:767px) {
+    .add_dynamic .panel {
+      padding: 10px 10px 0;
+    }
+  }
+
+}
+
+// width - height 
+@mixin anonywidth($width, $height) {
+  width: $width;
+  height: $height;
+}
+

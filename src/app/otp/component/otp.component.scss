@@ -1,0 +1,21 @@
+@import 'mix';
+@include btn_groups;
+.form_wrapper {
+    text-align: center;
+}
+.mat-h2 {
+    margin-bottom: 0;
+}
+
+form {
+    margin-top: 30px;
+}
+.underline{
+    @include anonywidth(50px, 50px);
+    margin-right: 8px;
+    border-radius: 4px;
+    border: 1px solid $otp_border;
+    text-align: center;    
+    margin-bottom: 30px;
+}
+

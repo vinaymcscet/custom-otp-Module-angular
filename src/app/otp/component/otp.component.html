@@ -1,0 +1,16 @@
+<div class="form_wrapper">
+
+    <div class="mat-h2">OTP</div>
+    <div class="mat-h3">Check your email and enter OTP.</div>
+
+    <form [formGroup]="otpForm" (ngSubmit)="otpForm.valid&&validateOtp()">
+        <input required class="underline" [formControl]="otpForm.controls[item]" maxlength="1" size="1" 
+            [type]="inputType" *ngFor="let item of otpForm?.controls | keys;let i=index" 
+            (keydown)="onKeyDown($event)" (keyup)="onKeyUp($event,i)"  id="otp_{{i}}_{{componentKey}}" appNumberOnly
+        >
+      <div class="btn_groups">
+        <button type="submit" color="primary">Submit</button>
+      </div>
+    </form>
+    
+</div>

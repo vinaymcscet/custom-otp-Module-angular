@@ -1,0 +1,59 @@
+@import 'var';
+/* 
+===================
+
+WRITE YOUR CODE FOR THEME COMPONENTS
+
+===================
+WARNING: this will apply in global style css so write only important common css here.
+*/
+
+/* --- FORM COMPONENT --- */
+
+mat-form-field {
+    width: 100%;
+    margin-bottom: 10px;
+    .suffix {
+        position: relative;
+        top: -8px;
+    }
+}
+
+.mat-button,
+.mat-flat-button,
+.mat-raised-button,
+.mat-icon-button,
+.mat-stroked-button {
+    font-size: 1rem;
+    letter-spacing: 0.01rem;
+    // height: 42px;
+    font-weight: 400;
+}
+
+
+.mat-menu-content {
+    padding: 0;
+}
+
+.mat-card {
+    display: block;
+    position: relative;
+    padding: 16px;
+    border-radius: 2px;
+    box-shadow: rgba(35, 47, 53, 0.09) 0px 2px 8px 0px !important;
+    & + .mat-card {margin-top: 20px;}
+}
+
+.mat-radio-group {
+    .mat-radio-button{
+        &.mat-radio-button{margin-left: 20px;}
+    }
+}
+
+.mat-checkbox{
+    display: block;
+    margin-bottom: 20px;
+}
+.mat-dialog-container{
+    padding: 0 !important;
+}
